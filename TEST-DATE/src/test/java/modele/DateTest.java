@@ -49,4 +49,24 @@ class DateTest {
 
     }
 
+    @Test
+    @DisplayName("Test de la méthode dateDuLendemain")
+    void dateDuLendemain() {
+        Date date1 = new Date (28, 02, 2020);
+        Date date1A = new Date (29, 02, 2020);
+        assertEquals(0, date1A.compareTo(date1.dateDuLendemain()));
+        Date date2 = new Date (28, 02, 2019);
+        Date date2A = new Date (01, 03, 2019);
+        assertEquals(0, date2A.compareTo(date2.dateDuLendemain()));
+        Date date3 = new Date (31, 12, 2019);
+        Date date3A = new Date (01, 01, 2020);
+        assertEquals(0, date3A.compareTo(date3.dateDuLendemain()));
+        Date date4 = new Date (30, 06, 2019);
+        Date date4A = new Date (01, 07, 2019);
+        assertEquals(0, date4A.compareTo(date4.dateDuLendemain()));
+        Date date5 = new Date (31, 07, 2019);
+        Date date5A = new Date (01, 8, 2019);
+        assertEquals(0, date5A.compareTo(date5.dateDuLendemain()));
+    }
+
 }
