@@ -26,4 +26,13 @@ class DateTest {
         assertEquals(true, Date.estAnneeBiss(2000));
         assertEquals(false, Date.estAnneeBiss(2100));
     }
+    @Test
+    @DisplayName("Test de la méthode dernierJourDuMois")
+    void dernierJourDuMois() {
+        assertEquals(30, Date.dernierJourMois(04, 2024));
+        assertEquals(31, Date.dernierJourMois(01, 2023));
+        assertEquals(29, Date.dernierJourMois(02, 2020));
+        assertEquals(28, Date.dernierJourMois(02, 2023));
+    }
+
 }
