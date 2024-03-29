@@ -67,4 +67,18 @@ public class Date {
         int entier2 = parDate.chAnnee*10000 + parDate.chMois*100 + parDate.chJour;
         return entier1 - entier2;
     }
+
+    public Date dateDuLendemain() {
+        int Jour = chJour, Mois = chMois, Annee = chAnnee;
+        Jour ++;
+        if (Jour > dernierJourMois(Mois, Annee)) {
+            Jour = 1;
+            Mois ++;
+            if (Mois > 12){
+                Mois =1;
+                Annee++;
+            }
+        }
+        return new Date(Jour, Mois, Annee);
+    }
 }
