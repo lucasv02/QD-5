@@ -44,4 +44,21 @@ public class Date {
             return true;
         return false;
     }
+
+    public static int dernierJourMois(int parMois, int parAns) {
+        switch (parMois) {
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return 30;
+            case 2:
+                if (estAnneeBiss(parAns))
+                    return 29;
+                else
+                    return 28;
+            default:
+                return 31;
+        }
+    }
 }
