@@ -61,4 +61,10 @@ public class Date {
                 return 31;
         }
     }
+
+    public int compareTo (Date parDate) {
+        int entier1 = chAnnee*10000 +chMois*100 + chJour;
+        int entier2 = parDate.chAnnee*10000 + parDate.chMois*100 + parDate.chJour;
+        return entier1 - entier2;
+    }
 }
