@@ -18,4 +18,12 @@ class DateTest {
         assertEquals(mois, date1.getChMois());
         assertEquals(annee, date1.getChAnnee());
     }
+    @Test
+    @DisplayName("Test de la méthode estAnneeBiss")
+    void estAnneeBiss() {
+        assertEquals(false, Date.estAnneeBiss(2023));
+        assertEquals(true, Date.estAnneeBiss(2020));
+        assertEquals(true, Date.estAnneeBiss(2000));
+        assertEquals(false, Date.estAnneeBiss(2100));
+    }
 }
