@@ -81,4 +81,18 @@ public class Date {
         }
         return new Date(Jour, Mois, Annee);
     }
+
+    public Date dateDeLaVeille() {
+        int Jour = chJour, Mois = chMois, Annee = chAnnee;
+        Jour --;
+        if (Jour < 1) {
+            Jour = dernierJourMois(Mois -1, Annee);
+            Mois --;
+            if (Mois < 1) {
+                Mois = 12;
+                Annee = Annee - 1;
+            }
+        }
+        return new Date(Jour, Mois, Annee);
+    }
 }
