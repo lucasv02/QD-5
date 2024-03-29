@@ -38,4 +38,10 @@ public class Date {
     public int getChAnnee () {
         return chAnnee;
     }
+
+    public static boolean estAnneeBiss(int parAns) {
+        if (parAns > 1582 && ((parAns % 4 == 0 && parAns % 100 != 0) || parAns % 400 == 0))
+            return true;
+        return false;
+    }
 }
