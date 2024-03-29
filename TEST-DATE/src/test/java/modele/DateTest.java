@@ -35,4 +35,18 @@ class DateTest {
         assertEquals(28, Date.dernierJourMois(02, 2023));
     }
 
+    @Test
+    @DisplayName("Test de la méthode CompareTo")
+    void compareto() {
+        Date date1 = new Date(02, 03, 2024);
+        Date date2 = new Date (02, 03, 2024);
+        Date date3 = new Date (03, 03, 2024);
+        Date date4 = new Date (01, 03, 2024);
+
+        assertEquals(0, date1.compareTo(date2));
+        assertEquals(-1, date1.compareTo(date3));
+        assertEquals(1, date1.compareTo(date4));
+
+    }
+
 }
